@@ -6,7 +6,9 @@ import '../../../configs/app_assets.dart';
 
 
 class NavBarLogo extends StatelessWidget {
-  const NavBarLogo({Key? key}) : super(key: key);
+  const NavBarLogo({required this.width, Key? key}) : super(key: key);
+
+  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class NavBarLogo extends StatelessWidget {
         BlocProvider.of<AppCubit>(context).scroll(0);
       },
       child: SizedBox(
-        width: 256,
+        width: width,
         child: Image.asset(
           Theme.of(context).brightness == Brightness.dark
             ? AppAssets.companyTextLogoWhiteIconPath!

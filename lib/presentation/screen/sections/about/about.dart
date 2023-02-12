@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-
-import '../../../configs/app_size.dart';
-import '../../widgets/section_base.dart';
+import '../../../responsive/responsive.dart';
+import 'about_desktop.dart';
 
 class About extends StatelessWidget {
   const About({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SectionBase(
-      height: AppSize.aboutSectionHeight!,
-      child: const Text("About")
+    return const Responsive(
+      mobile: AboutDesktop(),
+      tablet: AboutDesktop(),
+      desktop: AboutDesktop()
     );
   }
 }

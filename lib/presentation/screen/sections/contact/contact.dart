@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-
-import '../../../configs/app_size.dart';
-import '../../widgets/section_base.dart';
+import '../../../responsive/responsive.dart';
+import 'contact_desktop.dart';
 
 class Contact extends StatelessWidget {
   const Contact({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SectionBase(
-      height: AppSize.contactSectionHeight!,
-      child: const Text("Contact")
+    return const Responsive(
+      mobile: ContactDesktop(),
+      tablet: ContactDesktop(),
+      desktop: ContactDesktop()
     );
   }
 }

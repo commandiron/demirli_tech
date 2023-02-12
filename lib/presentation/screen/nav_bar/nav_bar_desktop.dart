@@ -1,10 +1,13 @@
 import 'package:demirli_tech/presentation/configs/app_space.dart';
+import 'package:demirli_tech/presentation/screen/nav_bar/widgets/contact_icon_button.dart';
 import 'package:demirli_tech/presentation/screen/nav_bar/widgets/nav_bar_logo.dart';
 import 'package:demirli_tech/presentation/screen/nav_bar/widgets/navbar_actions_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../../data/model/company_contact.dart';
 import '../../configs/app_padding.dart';
 import '../../configs/app_size.dart';
+import '../../helper/url_launcher.dart';
 import '../sections/body_section.dart';
 
 class NavBarDesktop extends StatelessWidget {
@@ -20,7 +23,7 @@ class NavBarDesktop extends StatelessWidget {
       child: Row(
         children: [
           AppSpace.horizontalXL!,
-          const NavBarLogo(),
+          NavBarLogo(width: AppSize.logoWidthDesktop!,),
           Expanded(
             child: FittedBox(
               fit: BoxFit.contain,
@@ -42,6 +45,17 @@ class NavBarDesktop extends StatelessWidget {
                 ],
               ),
             )
+          ),
+          Row(
+            children: CompanyContact.items.map(
+              (companyContact) {
+                return ContactIconButton(
+                  iconPath: companyContact.iconPath,
+                  iconOriginalColor: companyContact.iconOriginalColor,
+                  onTap: () => openURL(companyContact.url),
+                );
+              }
+            ).toList(),
           ),
           SizedBox(
             width: AppSize.logoWidthDesktop!,

@@ -1,8 +1,7 @@
 class AppSize {
+  static double? navBarHeight;
   static double? logoWidthDesktop;
   static double? logoWidthMobile;
-  static double? navBarHeight;
-  static double? bodyDividerHeight;
 
   static double? homeSectionHeight;
   static double? homeAnimationStartOffset;
@@ -23,10 +22,9 @@ class AppSize {
   static double? contactSectionHeight;
 
   static void init() {
-    logoWidthDesktop = 256;
-    logoWidthMobile = 128;
     navBarHeight = 96;
-    bodyDividerHeight = 0;
+    logoWidthDesktop = 256;
+    logoWidthMobile = 196;
 
     homeSectionHeight = 960;
     productsSectionHeight = 960;

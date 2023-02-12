@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-import 'about/about.dart';
-import 'contact/contact.dart';
-import 'home/home.dart';
-import 'products/products.dart';
-import 'services/services.dart';
+import 'about/about_desktop.dart';
+import 'contact/contact_desktop.dart';
+import 'home/home_desktop.dart';
+import 'products/products_desktop.dart';
+import 'services/services_desktop.dart';
 
 enum BodySection {
 
-  home("Ana Sayfa", Home()),
-  products("Ürünler", Products()),
-  services("Hizmetler", Services()),
-  about("Hakkımızda", About()),
-  contact("İletişim", Contact());
+  home("Ana Sayfa", HomeDesktop()),
+  products("Ürünler", ProductsDesktop()),
+  services("Hizmetler", ServicesDesktop()),
+  about("Hakkımızda", AboutDesktop()),
+  contact("İletişim", ContactDesktop());
 
   const BodySection(
     this.title,
