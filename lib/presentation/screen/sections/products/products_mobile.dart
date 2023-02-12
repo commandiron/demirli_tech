@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:demirli_tech/presentation/cubit/app_cubit.dart';
-import 'package:demirli_tech/presentation/screen/sections/products/widget/carousel_item_desktop.dart';
 import 'package:demirli_tech/presentation/screen/sections/products/widget/products_next_arrow.dart';
 import 'package:demirli_tech/presentation/screen/sections/products/widget/products_title.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +12,10 @@ import '../../../configs/app_padding.dart';
 import '../../../configs/app_size.dart';
 import '../../../cubit/app_state.dart';
 import '../../widgets/section_base.dart';
+import 'widget/carousel_item_mobile.dart';
 
-class ProductsDesktop extends StatelessWidget {
-  const ProductsDesktop({Key? key}) : super(key: key);
+class ProductsMobile extends StatelessWidget {
+  const ProductsMobile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class ProductsDesktop extends StatelessWidget {
                 children: [
                   const ProductsTitle(),
                   Padding(
-                    padding: AppPadding.verticalXL!,
+                    padding: AppPadding.verticalS!,
                     child: ScrollConfiguration(
                       behavior: ScrollConfiguration.of(context).copyWith(
                         dragDevices: {
@@ -44,10 +44,10 @@ class ProductsDesktop extends StatelessWidget {
                         carouselController: state.carouselController,
                         options: CarouselOptions(
                           viewportFraction: 1.0,
-                          height: AppSize.productsSectionHeight! / 1.5,
+                          height: AppSize.productsSectionHeight! / 1.2,
                         ),
                         itemBuilder: (context, index, realIndex) {
-                          return CarouselItemDesktop(
+                          return CarouselItemMobile(
                             product: CompanyProduct.items[index]
                           );
                         },
@@ -57,7 +57,7 @@ class ProductsDesktop extends StatelessWidget {
                 ],
               ),
               ProductsNextArrow(
-                size: 64,
+                size: 32,
                 onTap: () {
                   state.carouselController.nextPage();
                 }

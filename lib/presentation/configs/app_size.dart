@@ -25,8 +25,8 @@ class AppSize {
   static double? contactSectionHeight;
 
   static void init(BuildContext context) {
-    navBarHeight = 96;
-    logoWidth = Responsive.isDesktop(context) ? 256 : 196;
+    navBarHeight = Responsive.isMobile(context) ? 64 : 96;
+    logoWidth = Responsive.isDesktop(context) ? 256 : Responsive.isTablet(context) ? 200 : 140;
 
     homeSectionHeight = MediaQuery.of(context).size.height;
     productsSectionHeight = MediaQuery.of(context).size.height - navBarHeight!;

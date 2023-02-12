@@ -30,3 +30,5 @@ flutter:
     - assets/images/
     - assets/images/contact/
     - assets/images/logo/
+    - assets/images/product/
+    - assets/images/badges/
