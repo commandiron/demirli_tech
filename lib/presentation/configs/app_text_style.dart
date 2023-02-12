@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyle {
 
@@ -26,8 +27,9 @@ class AppTextStyle {
   static TextStyle? l2b;
 
   static init(BuildContext context) {
+
+    final baseStyle = GoogleFonts.roboto();
     const bold = FontWeight.bold;
-    const baseStyle = TextStyle();
     final color = Theme.of(context).colorScheme.onPrimaryContainer;
 
     h1 = baseStyle.copyWith(fontSize: 36, color: color);

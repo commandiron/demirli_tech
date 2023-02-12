@@ -19,7 +19,7 @@ class NavBarMobile extends StatelessWidget {
       padding: AppPadding.horizontalL!.add(AppPadding.verticalM!),
       child: Row(
         children: [
-          NavBarLogo(width: AppSize.logoWidthMobile!),
+          NavBarLogo(width: AppSize.logoWidth!),
           AppSpace.horizontalExpanded!,
           IconButton(
             highlightColor: Theme.of(context).colorScheme.onPrimaryContainer,

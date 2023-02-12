@@ -25,7 +25,7 @@ class AppDrawer extends StatelessWidget {
           Column(
             children: [
               AppSpace.verticalXL!,
-              NavBarLogo(width: AppSize.logoWidthMobile!,),
+              NavBarLogo(width: AppSize.logoWidth!,),
               AppSpace.verticalXL!,
               ListView.builder(
                 itemCount: BodySection.values.length,

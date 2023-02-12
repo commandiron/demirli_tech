@@ -23,7 +23,7 @@ class NavBarDesktop extends StatelessWidget {
       child: Row(
         children: [
           AppSpace.horizontalXL!,
-          NavBarLogo(width: AppSize.logoWidthDesktop!,),
+          NavBarLogo(width: AppSize.logoWidth!,),
           Expanded(
             child: FittedBox(
               fit: BoxFit.contain,
@@ -58,7 +58,7 @@ class NavBarDesktop extends StatelessWidget {
             ).toList(),
           ),
           SizedBox(
-            width: AppSize.logoWidthDesktop!,
+            width: AppSize.logoWidth!,
             child: NavBarActionButton(
               label: BodySection.contact.title,
               index: 4,

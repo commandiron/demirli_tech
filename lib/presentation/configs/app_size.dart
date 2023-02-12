@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
+
+import '../responsive/responsive.dart';
+
 class AppSize {
   static double? navBarHeight;
-  static double? logoWidthDesktop;
-  static double? logoWidthMobile;
+  static double? logoWidth;
 
   static double? homeSectionHeight;
   static double? homeAnimationStartOffset;
@@ -21,10 +24,9 @@ class AppSize {
 
   static double? contactSectionHeight;
 
-  static void init() {
+  static void init(BuildContext context) {
     navBarHeight = 96;
-    logoWidthDesktop = 256;
-    logoWidthMobile = 196;
+    logoWidth = Responsive.isDesktop(context) ? 256 : 196;
 
     homeSectionHeight = 960;
     productsSectionHeight = 960;

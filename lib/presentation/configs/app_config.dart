@@ -9,7 +9,7 @@ import 'app_text_style.dart';
 class AppConfig {
 
   static init(BuildContext context) {
-    AppSize.init();
+    AppSize.init(context);
     AppTextStyle.init(context);
     AppSpace.init();
     AppPadding.init();
