@@ -1,10 +1,11 @@
 import 'package:demirli_tech/presentation/cubit/app_cubit.dart';
-import 'package:demirli_tech/presentation/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'configs/app_config.dart';
-import 'cubit/app_state.dart';
+import '../configs/app_config.dart';
+import '../cubit/app_state.dart';
+import 'app_body.dart';
+import 'nav_bar/nav_bar_desktop.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -17,15 +18,10 @@ class MainScreen extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           key: state.scaffoldKey,
-          endDrawer: !Responsive.isDesktop(context)
-            ? const AppDrawer()
-            : null,
           body: Stack(
-            children: [
-              const AppBody(),
-              Responsive.isDesktop(context)
-                  ? const NavBarDesktop()
-                  : const NavBarMobile()
+            children: const [
+              AppBody(),
+              NavBarDesktop()
             ],
           )
         );

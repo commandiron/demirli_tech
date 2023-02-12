@@ -22,7 +22,7 @@ class AppCubit extends Cubit<AppState> {
     });
   }
 
-  scroll(int index) {
+  void scroll(int index) {
     double offset =
     index == 0
         ? 0
