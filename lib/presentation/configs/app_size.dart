@@ -28,7 +28,7 @@ class AppSize {
     navBarHeight = 96;
     logoWidth = Responsive.isDesktop(context) ? 256 : 196;
 
-    homeSectionHeight = 960;
+    homeSectionHeight = !Responsive.isMobile(context) ? 960 : MediaQuery.of(context).size.height;
     productsSectionHeight = 960;
     servicesSectionHeight = 720;
     aboutSectionHeight = 720;

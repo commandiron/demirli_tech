@@ -32,7 +32,10 @@ class AppDrawer extends StatelessWidget {
                 shrinkWrap: true,
                 itemBuilder: (context, index) => DrawerItem(
                   title: BodySection.values[index].title,
-                  onPressed: () => BlocProvider.of<AppCubit>(context, listen: false).scroll(index)
+                  onPressed: () {
+                    BlocProvider.of<AppCubit>(context, listen: false).scroll(index);
+                    Scaffold.of(context).closeEndDrawer();
+                  }
                 )
               ),
             ],
