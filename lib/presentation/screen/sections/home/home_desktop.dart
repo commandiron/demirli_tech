@@ -1,3 +1,4 @@
+import 'package:demirli_tech/presentation/configs/app_space.dart';
 import 'package:demirli_tech/presentation/screen/sections/home/widgets/home_title.dart';
 import 'package:demirli_tech/presentation/screen/sections/home/widgets/home_vision_categories.dart';
 import 'package:demirli_tech/presentation/screen/sections/home/widgets/section_home_base.dart';
@@ -13,22 +14,22 @@ class HomeDesktop extends StatelessWidget {
     return SectionHomeBase(
       child: Padding(
         padding: const EdgeInsets.only(
-          top: 256,
           left: 64,
           right: 64
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            AppSpace.verticalExpanded!,
             const HomeTitle(
               titleWidthFactor: 0.5,
             ),
-            Expanded(
-              child: HomeVisionCategories(
-                radius: 80,
-                style: AppTextStyle.h2!
-              )
-            )
+            AppSpace.verticalExpanded!,
+            HomeVisionCategories(
+              radius: 80,
+              style: AppTextStyle.h2!
+            ),
+            AppSpace.verticalExpanded!,
           ]
         ),
       ),

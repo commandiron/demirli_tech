@@ -26,7 +26,7 @@ class HomeTablet extends StatelessWidget {
             Expanded(
               child: HomeVisionCategories(
                 radius: 50,
-                style: AppTextStyle.h2!
+                style: AppTextStyle.h2!,
               )
             )
           ]
