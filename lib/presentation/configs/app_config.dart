@@ -1,4 +1,5 @@
 import 'package:demirli_tech/presentation/configs/app_size.dart';
+import 'package:demirli_tech/presentation/configs/app_strings.dart';
 import 'package:flutter/material.dart';
 
 import 'app_assets.dart';
@@ -13,6 +14,7 @@ class AppConfig {
     AppTextStyle.init(context);
     AppSpace.init();
     AppPadding.init();
+    AppStrings.init();
     AppAssets.init();
   }
 }
