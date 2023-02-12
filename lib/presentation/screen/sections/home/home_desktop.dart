@@ -21,9 +21,11 @@ class HomeDesktop extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppSpace.verticalExpanded!,
+            AppSpace.verticalExpanded!,
             const HomeTitle(
               titleWidthFactor: 0.5,
             ),
+            AppSpace.verticalExpanded!,
             AppSpace.verticalExpanded!,
             HomeVisionCategories(
               radius: 80,
