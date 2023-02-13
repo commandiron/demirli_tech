@@ -15,10 +15,10 @@ class AppSize {
     navBarHeight = Responsive.isMobile(context) ? 64 : 96;
     logoWidth = Responsive.isDesktop(context) ? 256 : Responsive.isTablet(context) ? 200 : 140;
 
-    homeSectionHeight = MediaQuery.of(context).size.height;
-    productsSectionHeight = MediaQuery.of(context).size.height - navBarHeight!;
-    servicesSectionHeight = Responsive.isDesktop(context) ? 720 : Responsive.isTablet(context) ? 540 : MediaQuery.of(context).size.height - navBarHeight!;
-    aboutSectionHeight = Responsive.isMobile(context) ? MediaQuery.of(context).size.height - navBarHeight! : 720;
-    contactSectionHeight =  Responsive.isMobile(context) ? MediaQuery.of(context).size.height - navBarHeight! : 480;
+    homeSectionHeight = Responsive.isMobile(context) ? 600 : 960;
+    productsSectionHeight = Responsive.isMobile(context) ? 600 : 960;
+    servicesSectionHeight = 720;
+    aboutSectionHeight = Responsive.isMobile(context) ? 600 : 720;
+    contactSectionHeight = 480;
   }
 }
