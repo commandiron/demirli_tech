@@ -28,6 +28,7 @@ class AppDrawer extends StatelessWidget {
               NavBarLogo(width: AppSize.logoWidth!,),
               AppSpace.verticalXL!,
               ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: BodySection.values.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) => DrawerItem(
