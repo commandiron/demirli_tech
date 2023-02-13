@@ -46,19 +46,19 @@ class _CompanyServiceItemState extends State<CompanyServiceItem> {
       },
       onHover: (value) {
         if(widget.onHoverAnimationEnabled) {
-          // setState(() {
-          //   if (value) {
-          //     _textColor = Theme.of(context).colorScheme.primary;
-          //     _iconColorList = widget.companyService.highlightedIconColorList;
-          //     _cardElevation = 20.0;
-          //     _frameColorOpacity = 1.0;
-          //   } else {
-          //     _textColor = widget.defaultColor;
-          //     _iconColorList = [widget.defaultColor, widget.defaultColor];
-          //     _cardElevation = 0;
-          //     _frameColorOpacity = 0.5;
-          //   }
-          // });
+          setState(() {
+            if (value) {
+              _textColor = Theme.of(context).colorScheme.primary;
+              _iconColorList = widget.companyService.highlightedIconColorList;
+              _cardElevation = 20.0;
+              _frameColorOpacity = 1.0;
+            } else {
+              _textColor = widget.defaultColor;
+              _iconColorList = [widget.defaultColor, widget.defaultColor];
+              _cardElevation = 0;
+              _frameColorOpacity = 0.5;
+            }
+          });
         }
       },
       child: Card(
