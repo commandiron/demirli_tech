@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:demirli_tech/presentation/cubit/app_cubit.dart';
 import 'package:demirli_tech/presentation/cubit/app_state.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +16,13 @@ class AppBody extends StatelessWidget {
       builder: (context, state) {
         return CustomScrollView(
           controller: state.scrollController,
+          scrollBehavior: const MaterialScrollBehavior().copyWith(
+            dragDevices: {
+              PointerDeviceKind.mouse,
+              PointerDeviceKind.trackpad,
+              PointerDeviceKind.touch
+            },
+          ),
           slivers: [
             SliverToBoxAdapter(
               child: ListView(
