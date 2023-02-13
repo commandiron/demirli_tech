@@ -32,7 +32,6 @@ class ServicesMobile extends StatelessWidget {
                         height: 400,
                         defaultColor: Theme.of(context).colorScheme.onPrimaryContainer,
                         companyService: companyService,
-                        onHoverAnimationEnabled: false,
                       ),
                     );
                   }

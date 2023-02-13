@@ -14,7 +14,6 @@ class CompanyServiceItem extends StatefulWidget {
       required this.height,
       required this.defaultColor,
       required this.companyService,
-      this.onHoverAnimationEnabled = true,
       Key? key
     }
   ) : super(key: key);
@@ -23,7 +22,6 @@ class CompanyServiceItem extends StatefulWidget {
   final double height;
   final Color defaultColor;
   final CompanyService companyService;
-  final bool onHoverAnimationEnabled;
 
   @override
   State<CompanyServiceItem> createState() => _CompanyServiceItemState();
@@ -32,11 +30,9 @@ class CompanyServiceItem extends StatefulWidget {
 class _CompanyServiceItemState extends State<CompanyServiceItem> {
 
   late Color _textColor = widget.defaultColor;
-  late List<Color> _iconColorList = widget.onHoverAnimationEnabled
-    ? [widget.defaultColor, widget.defaultColor]
-    : widget.companyService.highlightedIconColorList;
-  double _cardElevation = 0;
-  double _frameColorOpacity = 0.5;
+  late List<Color> _iconColorList =[widget.defaultColor, widget.defaultColor];
+  late double _cardElevation =  0;
+  late double _frameColorOpacity = 0.5;
 
   @override
   Widget build(BuildContext context) {
@@ -45,21 +41,19 @@ class _CompanyServiceItemState extends State<CompanyServiceItem> {
         BlocProvider.of<AppCubit>(context, listen: false).scroll(4);
       },
       onHover: (value) {
-        if(widget.onHoverAnimationEnabled) {
-          setState(() {
-            if (value) {
-              _textColor = Theme.of(context).colorScheme.primary;
-              _iconColorList = widget.companyService.highlightedIconColorList;
-              _cardElevation = 20.0;
-              _frameColorOpacity = 1.0;
-            } else {
-              _textColor = widget.defaultColor;
-              _iconColorList = [widget.defaultColor, widget.defaultColor];
-              _cardElevation = 0;
-              _frameColorOpacity = 0.5;
-            }
-          });
-        }
+        setState(() {
+          if (value) {
+            _textColor = Theme.of(context).colorScheme.primary;
+            _iconColorList = widget.companyService.highlightedIconColorList;
+            _cardElevation = 20.0;
+            _frameColorOpacity = 1.0;
+          } else {
+            _textColor = widget.defaultColor;
+            _iconColorList = [widget.defaultColor, widget.defaultColor];
+            _cardElevation = 0;
+            _frameColorOpacity = 0.5;
+          }
+        });
       },
       child: Card(
         color: Theme.of(context).colorScheme.secondaryContainer,
