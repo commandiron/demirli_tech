@@ -14,7 +14,7 @@ class NavBarLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        BlocProvider.of<AppCubit>(context).scroll(0);
+        BlocProvider.of<AppCubit>(context, listen: false).scroll(0);
       },
       child: SizedBox(
         width: width,
