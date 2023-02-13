@@ -9,8 +9,8 @@ import '../../../configs/app_text_style.dart';
 import '../../widgets/section_base.dart';
 import '../body_section.dart';
 
-class AboutDesktop extends StatelessWidget {
-  const AboutDesktop({Key? key}) : super(key: key);
+class AboutTablet extends StatelessWidget {
+  const AboutTablet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../responsive/responsive.dart';
 
@@ -30,9 +30,9 @@ class AppSize {
 
     homeSectionHeight = MediaQuery.of(context).size.height;
     productsSectionHeight = MediaQuery.of(context).size.height - navBarHeight!;
-    servicesSectionHeight = 720;
-    aboutSectionHeight = 720;
-    contactSectionHeight = 480;
+    servicesSectionHeight = Responsive.isDesktop(context) ? 720 : Responsive.isTablet(context) ? 540 : MediaQuery.of(context).size.height - navBarHeight!;
+    aboutSectionHeight = Responsive.isMobile(context) ? MediaQuery.of(context).size.height - navBarHeight! : 720;
+    contactSectionHeight =  Responsive.isMobile(context) ? MediaQuery.of(context).size.height - navBarHeight! : 480;
 
     homeAnimationStartOffset = 0;
     homeAnimationEndOffset = AppSize.homeSectionHeight! +  AppSize.productsSectionHeight!;

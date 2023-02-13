@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:demirli_tech/presentation/cubit/app_cubit.dart';
 import 'package:demirli_tech/presentation/screen/sections/products/widget/products_next_arrow.dart';
-import 'package:demirli_tech/presentation/screen/sections/products/widget/products_title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,6 +11,8 @@ import '../../../configs/app_padding.dart';
 import '../../../configs/app_size.dart';
 import '../../../cubit/app_state.dart';
 import '../../widgets/section_base.dart';
+import '../../widgets/section_title.dart';
+import '../body_section.dart';
 import 'widget/carousel_item_mobile.dart';
 
 class ProductsMobile extends StatelessWidget {
@@ -27,7 +28,7 @@ class ProductsMobile extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  const ProductsTitle(),
+                  SectionTitle(title: BodySection.products.title,),
                   Padding(
                     padding: AppPadding.verticalS!,
                     child: ScrollConfiguration(
