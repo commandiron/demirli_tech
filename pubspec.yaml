@@ -28,7 +28,12 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/images/badges/
     - assets/images/contact/
     - assets/images/logo/
     - assets/images/product/
-    - assets/images/badges/
+    - assets/images/product/kost/
+    - assets/images/product/planok/
+    - assets/images/product/qr_projem/
+    - assets/images/product/reb_ar/
+    - assets/images/service/
