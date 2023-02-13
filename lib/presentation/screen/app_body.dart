@@ -15,11 +15,14 @@ class AppBody extends StatelessWidget {
         return CustomScrollView(
           controller: state.scrollController,
           slivers: [
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                childCount: BodySection.values.length,
-                (context, index) => BodySection.values[index].view
-              )
+            SliverToBoxAdapter(
+              child: ListView(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                children: BodySection.values.map(
+                  (section) => section.view
+                ).toList(),
+              ),
             )
           ],
         );
