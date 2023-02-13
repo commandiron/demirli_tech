@@ -37,10 +37,13 @@ class AboutMobile extends StatelessWidget {
                   ),
                   Expanded(
                     flex: 3,
-                    child: Center(
-                      child: Text(
-                        AppStrings.aboutText!,
-                        style: AppTextStyle.b2,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Text(
+                          AppStrings.aboutText!,
+                          style: AppTextStyle.b2,
+                        ),
                       ),
                     ),
                   ),
