@@ -10,7 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
   url_strategy: ^0.2.0
   flutter_bloc: ^8.1.2
   carousel_slider: ^4.2.0
