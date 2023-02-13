@@ -14,7 +14,7 @@ class HomeMobile extends StatelessWidget {
     return SectionHomeBase(
       child: Padding(
         padding: const EdgeInsets.only(
-          top: 128,
+          top: 64,
           left: 16,
           right: 16
         ),

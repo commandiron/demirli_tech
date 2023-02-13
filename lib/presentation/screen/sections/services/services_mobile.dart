@@ -20,22 +20,25 @@ class ServicesMobile extends StatelessWidget {
         children: [
           SectionTitle(title: BodySection.services.title,),
           Expanded(
-            child: FittedBox(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: CompanyService.items.map(
-                  (companyService) {
-                    return Padding(
-                      padding: AppPadding.allL!,
-                      child: CompanyServiceItem(
-                        width: 400,
-                        height: 400,
-                        defaultColor: Theme.of(context).colorScheme.onPrimaryContainer,
-                        companyService: companyService,
-                      ),
-                    );
-                  }
-                ).toList()
+            child: Padding(
+              padding: AppPadding.verticalM!,
+              child: FittedBox(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: CompanyService.items.map(
+                    (companyService) {
+                      return Padding(
+                        padding: AppPadding.verticalS!,
+                        child: CompanyServiceItem(
+                          width: 300,
+                          height: 300,
+                          defaultColor: Theme.of(context).colorScheme.onPrimaryContainer,
+                          companyService: companyService,
+                        ),
+                      );
+                    }
+                  ).toList()
+                ),
               ),
             ),
           )

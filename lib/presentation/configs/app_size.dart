@@ -15,10 +15,10 @@ class AppSize {
     navBarHeight = Responsive.isMobile(context) ? 64 : 96;
     logoWidth = Responsive.isDesktop(context) ? 256 : Responsive.isTablet(context) ? 200 : 140;
 
-    homeSectionHeight = Responsive.isMobile(context) ? 600 : 960;
-    productsSectionHeight = Responsive.isMobile(context) ? 600 : 960;
-    servicesSectionHeight = 720;
+    homeSectionHeight = Responsive.isMobile(context) ? 720 : 960;
+    productsSectionHeight = Responsive.isMobile(context) ? 500: 960;
+    servicesSectionHeight = 600;
     aboutSectionHeight = Responsive.isMobile(context) ? 600 : 720;
-    contactSectionHeight = 480;
+    contactSectionHeight = 400;
   }
 }
