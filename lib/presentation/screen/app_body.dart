@@ -12,13 +12,16 @@ class AppBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AppCubit, AppState>(
       builder: (context, state) {
-        return SingleChildScrollView(
+        return CustomScrollView(
           controller: state.scrollController,
-          child: Column(
-            children: BodySection.values.map(
-              (section) => section.view
-            ).toList(),
-          ),
+          slivers: [
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                childCount: BodySection.values.length,
+                (context, index) => BodySection.values[index].view
+              )
+            )
+          ],
         );
       },
     );
