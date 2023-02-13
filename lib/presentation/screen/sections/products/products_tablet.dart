@@ -22,6 +22,7 @@ class ProductsTablet extends StatelessWidget {
   Widget build(BuildContext context) {
     return SectionBase(
       height: AppSize.productsSectionHeight!,
+      color: Theme.of(context).colorScheme.primaryContainer,
       child: BlocBuilder<AppCubit, AppState>(
         builder: (context, state) {
           return Stack(

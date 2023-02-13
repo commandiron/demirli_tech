@@ -15,6 +15,7 @@ class ServicesDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return SectionBase(
       height: AppSize.servicesSectionHeight!,
+      color: Theme.of(context).colorScheme.secondaryContainer,
       child: Column(
         children: [
           SectionTitle(title: BodySection.services.title,),

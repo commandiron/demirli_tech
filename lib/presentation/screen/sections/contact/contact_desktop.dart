@@ -19,6 +19,7 @@ class ContactDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return SectionBase(
       height: AppSize.contactSectionHeight!,
+        color: Theme.of(context).colorScheme.secondaryContainer,
       child:  Column(
         children: [
           SectionTitle(title: BodySection.contact.title),

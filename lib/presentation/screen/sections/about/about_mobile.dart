@@ -16,6 +16,7 @@ class AboutMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return SectionBase(
       height: AppSize.aboutSectionHeight!,
+      color: Theme.of(context).colorScheme.primaryContainer,
       child: Padding(
         padding: const EdgeInsets.only(
           left: 32,

@@ -16,6 +16,7 @@ class AboutTablet extends StatelessWidget {
   Widget build(BuildContext context) {
     return SectionBase(
       height: AppSize.aboutSectionHeight!,
+      color: Theme.of(context).colorScheme.primaryContainer,
       child: Column(
         children: [
           SectionTitle(title: BodySection.about.title,),
