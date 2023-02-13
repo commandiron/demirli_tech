@@ -45,8 +45,8 @@ class _CompanyServiceItemState extends State<CompanyServiceItem> {
         BlocProvider.of<AppCubit>(context, listen: false).scroll(4);
       },
       onHover: (value) {
-        setState(() {
-          if(widget.onHoverAnimationEnabled) {
+        if(widget.onHoverAnimationEnabled) {
+          setState(() {
             if (value) {
               _textColor = Theme.of(context).colorScheme.primary;
               _iconColorList = widget.companyService.highlightedIconColorList;
@@ -59,7 +59,8 @@ class _CompanyServiceItemState extends State<CompanyServiceItem> {
               _frameColorOpacity = 0.5;
             }
           }
-        });
+          );
+        }
       },
       child: Card(
         color: Theme.of(context).colorScheme.secondaryContainer,
