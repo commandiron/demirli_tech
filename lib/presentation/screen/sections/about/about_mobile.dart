@@ -43,7 +43,7 @@ class AboutMobile extends StatelessWidget {
                       child: Center(
                         child: Text(
                           AppStrings.aboutText!,
-                          style: AppTextStyle.b2,
+                          style: AppTextStyle.b3,
                         ),
                       ),
                     ),
