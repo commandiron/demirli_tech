@@ -87,23 +87,21 @@ class ContactDesktop extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        if(!kIsWeb)
-                          AppSpace.horizontalL!,
+                        AppSpace.horizontalL!,
                         Text("+90 535 508 55 52", style: AppTextStyle.b1!),
-                        if(!kIsWeb)
-                          Row(
-                            children: [
-                              AppSpace.horizontalM!,
-                              InkWell(
-                                onTap: () => openURL("tel:+90 535 508 55 52"),
-                                child: Icon(
-                                  Icons.phone,
-                                  color: Theme.of(context).colorScheme.primary,
-                                  size: 16,
-                                ),
+                        Row(
+                          children: [
+                            AppSpace.horizontalM!,
+                            InkWell(
+                              onTap: () => openURL("tel:+90 535 508 55 52"),
+                              child: Icon(
+                                Icons.phone,
+                                color: Theme.of(context).colorScheme.primary,
+                                size: 16,
                               ),
-                            ],
-                          )
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ],
