@@ -103,13 +103,13 @@ class _CarouselItemDesktopState extends State<CarouselItemDesktop> {
                 child: InkWell(
                   onTap: () {},
                   onHover: (value) {
-                    setState(() {
-                      if(value){
-                        _imageOpacity = 0.1;
-                      } else {
-                        _imageOpacity = 0.5;
-                      }
-                    });
+                    // setState(() {
+                    //   if(value){
+                    //     _imageOpacity = 0.1;
+                    //   } else {
+                    //     _imageOpacity = 0.5;
+                    //   }
+                    // });
                   },
                   child: Image.asset(widget.product.imageAssetPath)
                 )

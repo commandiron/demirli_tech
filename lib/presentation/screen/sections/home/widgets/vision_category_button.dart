@@ -28,9 +28,9 @@ class _VisionCategoryButtonState extends State<VisionCategoryButton> {
     return InkWell(
       onTap: widget.hasApp ? () {} : null,
       onHover: (value) {
-        setState(() {
-          _isOnHover = value;
-        });
+        // setState(() {
+        //   _isOnHover = value;
+        // });
       },
       child: CircleAvatar(
         radius: widget.radius,

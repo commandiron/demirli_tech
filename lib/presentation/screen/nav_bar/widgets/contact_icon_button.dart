@@ -29,9 +29,9 @@ class _ContactIconButtonState extends State<ContactIconButton> {
     return InkWell(
       onTap: widget.onTap,
       onHover: (value) {
-        setState((){
-          _isOnHover = value;
-        });
+        // setState((){
+        //   _isOnHover = value;
+        // });
       },
       child: Padding(
         padding: AppPadding.horizontalS!,
