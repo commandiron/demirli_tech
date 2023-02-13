@@ -11,7 +11,6 @@ import '../../../configs/app_space.dart';
 import '../../../configs/app_text_style.dart';
 import '../../../helper/url_launcher.dart';
 import '../../widgets/section_base.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
 
 class ContactDesktop extends StatelessWidget {
   const ContactDesktop({Key? key}) : super(key: key);
