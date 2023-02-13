@@ -21,6 +21,7 @@ class AppCore extends StatelessWidget {
       title: appTitle,
       theme: themeLight,
       darkTheme: themeDark,
+      themeMode: ThemeMode.dark,
       home: BlocProvider<AppCubit>(
         create: (context) => AppCubit(),
         child: const MainScreen(),
