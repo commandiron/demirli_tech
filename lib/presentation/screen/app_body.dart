@@ -12,10 +12,13 @@ class AppBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AppCubit, AppState>(
       builder: (context, state) {
-        return ListView.builder(
+        return SingleChildScrollView(
           controller: state.scrollController,
-          itemCount: BodySection.values.length,
-          itemBuilder: (context, index) => BodySection.values[index].view,
+          child: Column(
+            children: BodySection.values.map(
+              (section) => section.view
+            ).toList(),
+          ),
         );
       },
     );
