@@ -9,7 +9,7 @@ class AppCubit extends Cubit<AppState> {
   AppCubit() : super(
     AppState(
       scaffoldKey: GlobalKey<ScaffoldState>(),
-      scrollController: ScrollController(),
+      pageController: PageController(),
       carouselController: CarouselController(),
       carouselKey: GlobalKey()
     )
@@ -28,10 +28,10 @@ class AppCubit extends Cubit<AppState> {
         : index == 4
         ? AppSize.homeSectionHeight! + AppSize.productsSectionHeight! + AppSize.servicesSectionHeight! + AppSize.aboutSectionHeight! - AppSize.navBarHeight!
         : 0;
-    state.scrollController.animateTo(
-      offset,
+    state.pageController.animateToPage(
+      index,
       duration: const Duration(seconds: 1),
-      curve: Curves.easeInOut,
+      curve: Curves.easeInOut
     );
   }
 }
