@@ -20,9 +20,7 @@ class AppCore extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: appTitle,
       theme: themeLight,
-      darkTheme: themeDark.copyWith(
-        visualDensity: VisualDensity.adaptivePlatformDensity
-      ),
+      darkTheme: themeDark,
       themeMode: ThemeMode.dark,
       home: BlocProvider<AppCubit>(
         create: (context) => AppCubit(),
