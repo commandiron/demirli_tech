@@ -1,12 +1,15 @@
 import 'package:demirli_tech/presentation/configs/app_space.dart';
 import 'package:demirli_tech/presentation/screen/nav_bar/widgets/contact_icon_button.dart';
 import 'package:demirli_tech/presentation/screen/nav_bar/widgets/nav_bar_logo.dart';
-import 'package:demirli_tech/presentation/screen/nav_bar/widgets/navbar_actions_button.dart';
+import 'package:demirli_tech/presentation/screen/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../data/model/company_contact.dart';
 import '../../configs/app_padding.dart';
 import '../../configs/app_size.dart';
+import '../../configs/app_text_style.dart';
+import '../../cubit/app_cubit.dart';
 import '../../helper/url_launcher.dart';
 import '../sections/body_section.dart';
 
@@ -33,9 +36,12 @@ class NavBarDesktop extends StatelessWidget {
                   ...BodySection.values.asMap().entries.map(
                     (bodySection) {
                       if(bodySection.value != BodySection.contact) {
-                        return NavBarActionButton(
+                        return NavigationButton(
                           label: bodySection.value.title,
-                          index: bodySection.key,
+                          style: AppTextStyle.l1,
+                          onPressed: () {
+                            BlocProvider.of<AppCubit>(context, listen: false).scroll(bodySection.key);
+                          },
                         );
                       } else {
                         return const SizedBox.shrink();
@@ -59,10 +65,13 @@ class NavBarDesktop extends StatelessWidget {
           ),
           SizedBox(
             width: AppSize.logoWidth!,
-            child: NavBarActionButton(
+            child: NavigationButton(
               label: BodySection.contact.title,
-              index: 4,
+              style: AppTextStyle.l1,
               highlighted: true,
+              onPressed: () {
+                BlocProvider.of<AppCubit>(context, listen: false).scroll(4);
+              },
             ),
           ),
           AppSpace.horizontalXL!,

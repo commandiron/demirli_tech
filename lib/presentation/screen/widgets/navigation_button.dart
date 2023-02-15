@@ -1,21 +1,21 @@
-import 'package:demirli_tech/presentation/cubit/app_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../configs/app_padding.dart';
-import '../../../configs/app_text_style.dart';
+import '../../configs/app_padding.dart';
+import '../../configs/app_text_style.dart';
 
-class NavBarActionButton extends StatelessWidget {
+class NavigationButton extends StatelessWidget {
 
-  const NavBarActionButton({
+  const NavigationButton({
     Key? key,
     required this.label,
-    required this.index,
-    this.highlighted = false
+    this.style,
+    this.highlighted = false,
+    required this.onPressed,
   }) : super(key: key);
 
   final String label;
-  final int index;
+  final TextStyle? style;
   final bool highlighted;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +25,7 @@ class NavBarActionButton extends StatelessWidget {
         ? Padding(
           padding: AppPadding.horizontalM!,
           child: ElevatedButton(
-            onPressed: () {
-              BlocProvider.of<AppCubit>(context, listen: false).scroll(index);
-            },
+            onPressed: onPressed,
             child: Padding(
               padding: AppPadding.verticalS!,
               child: Text(
@@ -38,9 +36,7 @@ class NavBarActionButton extends StatelessWidget {
           ),
         )
         : TextButton(
-        onPressed: () {
-          BlocProvider.of<AppCubit>(context, listen: false).scroll(index);
-        },
+        onPressed: onPressed,
         style: ButtonStyle(
           foregroundColor: MaterialStateProperty.resolveWith<Color?>(
             (states) {
@@ -56,7 +52,7 @@ class NavBarActionButton extends StatelessWidget {
           padding: AppPadding.verticalM!,
           child: Text(
             label,
-            style: AppTextStyle.l1
+            style: style
           ),
         )
       ),

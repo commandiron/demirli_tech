@@ -3,8 +3,12 @@ import 'package:demirli_tech/presentation/screen/sections/home/widgets/home_titl
 import 'package:demirli_tech/presentation/screen/sections/home/widgets/home_vision_categories.dart';
 import 'package:demirli_tech/presentation/screen/sections/home/widgets/section_home_base.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../configs/app_text_style.dart';
+import '../../../cubit/app_cubit.dart';
+import '../../widgets/navigation_button.dart';
+import '../body_section.dart';
 
 class HomeMobile extends StatelessWidget {
   const HomeMobile({Key? key}) : super(key: key);
@@ -20,11 +24,21 @@ class HomeMobile extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppSpace.verticalExpanded!,
             const HomeTitle(
               titleWidthFactor: 1,
+            ),
+            AppSpace.verticalExpanded!,
+            FractionallySizedBox(
+              widthFactor: 0.75,
+              child: NavigationButton(
+                label: BodySection.contact.title,
+                highlighted: true,
+                onPressed: () {
+                  BlocProvider.of<AppCubit>(context, listen: false).scroll(4);
+                },
+              ),
             ),
             AppSpace.verticalExpanded!,
             HomeVisionCategories(

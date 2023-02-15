@@ -1,12 +1,13 @@
 import 'package:demirli_tech/presentation/cubit/app_cubit.dart';
+import 'package:demirli_tech/presentation/screen/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../configs/app_assets.dart';
 import '../../configs/app_size.dart';
 import '../../configs/app_space.dart';
+import '../../configs/app_text_style.dart';
 import '../nav_bar/widgets/nav_bar_logo.dart';
 import '../sections/body_section.dart';
-import 'drawer_item.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -31,8 +32,10 @@ class AppDrawer extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: BodySection.values.length,
                 shrinkWrap: true,
-                itemBuilder: (context, index) => DrawerItem(
-                  title: BodySection.values[index].title,
+                itemBuilder: (context, index) => NavigationButton(
+                  label: BodySection.values[index].title,
+                  style: AppTextStyle.b2,
+                  highlighted: index == 4,
                   onPressed: () {
                     BlocProvider.of<AppCubit>(context, listen: false).scroll(index);
                     Scaffold.of(context).closeEndDrawer();
