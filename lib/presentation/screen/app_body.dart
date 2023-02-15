@@ -14,7 +14,15 @@ class AppBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AppCubit, AppState>(
       builder: (context, state) {
-        return CustomScrollView(
+        return SingleChildScrollView(
+          child: Column(
+            children: BodySection.values.map(
+              (section) => section.view
+            ).toList(),
+          ),
+        );
+
+        CustomScrollView(
           controller: state.scrollController,
           scrollBehavior: const MaterialScrollBehavior().copyWith(
             dragDevices: {
