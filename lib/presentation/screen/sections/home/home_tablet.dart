@@ -6,7 +6,6 @@ import 'package:demirli_tech/presentation/screen/widgets/navigation_button.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../configs/app_size.dart';
 import '../../../configs/app_text_style.dart';
 import '../../../cubit/app_cubit.dart';
 import '../body_section.dart';
@@ -23,7 +22,6 @@ class HomeTablet extends StatelessWidget {
           right: 32
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppSpace.verticalExpanded!,
             AppSpace.verticalExpanded!,
@@ -31,8 +29,8 @@ class HomeTablet extends StatelessWidget {
               titleWidthFactor: 1,
             ),
             AppSpace.verticalExpanded!,
-            SizedBox(
-              width: AppSize.logoWidth!,
+            FractionallySizedBox(
+              widthFactor: 0.4,
               child: NavigationButton(
                 label: BodySection.contact.title,
                 highlighted: true,

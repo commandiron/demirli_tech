@@ -1,4 +1,6 @@
+import 'package:demirli_tech/presentation/cubit/app_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../configs/app_padding.dart';
 
@@ -7,14 +9,12 @@ class VisionCategoryButton extends StatefulWidget {
       {required this.radius,
       required this.title,
       required this.style,
-      this.hasApp = false,
       Key? key})
       : super(key: key);
 
   final double radius;
   final String title;
   final TextStyle style;
-  final bool hasApp;
 
   @override
   State<VisionCategoryButton> createState() => _VisionCategoryButtonState();
@@ -26,7 +26,9 @@ class _VisionCategoryButtonState extends State<VisionCategoryButton> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: widget.hasApp ? () {} : null,
+      onTap: () {
+        BlocProvider.of<AppCubit>(context, listen: false).scroll(1);
+      },
       onHover: (value) {
         setState(() {
           _isOnHover = value;

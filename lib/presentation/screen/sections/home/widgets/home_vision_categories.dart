@@ -33,7 +33,6 @@ class HomeVisionCategories extends StatelessWidget {
               radius: radius,
               title: title,
               style: style,
-              hasApp: true,
             )
           ).toList()
         ),
