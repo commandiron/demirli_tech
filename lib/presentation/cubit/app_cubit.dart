@@ -15,13 +15,6 @@ class AppCubit extends Cubit<AppState> {
     )
   );
 
-  void addOffsetListener(Function(double endOffset) listener) {
-    listener(state.scrollController.offset + state.scrollController.position.viewportDimension);
-    state.scrollController.addListener(() {
-      listener(state.scrollController.offset + state.scrollController.position.viewportDimension);
-    });
-  }
-
   void scroll(int index) {
     double offset =
     index == 0
