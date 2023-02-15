@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 class AppState {
   GlobalKey<ScaffoldState> scaffoldKey;
-  PageController pageController;
+  ScrollController scrollController;
   CarouselController carouselController;
   GlobalKey carouselKey;
 
   AppState(
     {
       required this.scaffoldKey,
-      required this.pageController,
+      required this.scrollController,
       required this.carouselController,
       required this.carouselKey
     }

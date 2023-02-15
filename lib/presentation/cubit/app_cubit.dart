@@ -9,11 +9,18 @@ class AppCubit extends Cubit<AppState> {
   AppCubit() : super(
     AppState(
       scaffoldKey: GlobalKey<ScaffoldState>(),
-      pageController: PageController(),
+      scrollController: ScrollController(),
       carouselController: CarouselController(),
       carouselKey: GlobalKey()
     )
   );
+
+  void addOffsetListener(Function(double endOffset) listener) {
+    listener(state.scrollController.offset + state.scrollController.position.viewportDimension);
+    state.scrollController.addListener(() {
+      listener(state.scrollController.offset + state.scrollController.position.viewportDimension);
+    });
+  }
 
   void scroll(int index) {
     double offset =
@@ -28,10 +35,10 @@ class AppCubit extends Cubit<AppState> {
         : index == 4
         ? AppSize.homeSectionHeight! + AppSize.productsSectionHeight! + AppSize.servicesSectionHeight! + AppSize.aboutSectionHeight! - AppSize.navBarHeight!
         : 0;
-    state.pageController.animateToPage(
-      index,
+    state.scrollController.animateTo(
+      offset,
       duration: const Duration(seconds: 1),
-      curve: Curves.easeInOut
+      curve: Curves.easeInOut,
     );
   }
 }

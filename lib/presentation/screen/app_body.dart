@@ -14,24 +14,6 @@ class AppBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AppCubit, AppState>(
       builder: (context, state) {
-        return PageView.builder(
-          controller: state.pageController,
-          pageSnapping: false,
-          scrollDirection: Axis.vertical,
-          scrollBehavior: const MaterialScrollBehavior().copyWith(
-            dragDevices: {
-              PointerDeviceKind.mouse,
-              PointerDeviceKind.trackpad,
-              PointerDeviceKind.touch
-            },
-          ),
-          itemCount: BodySection.values.length,
-          itemBuilder: (context, index) {
-            return BodySection.values[index].view;
-          },
-        );
-
-
         return CustomScrollView(
           scrollBehavior: const MaterialScrollBehavior().copyWith(
             dragDevices: {
