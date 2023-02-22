@@ -15,6 +15,7 @@ dependencies:
   carousel_slider: ^4.2.0
   url_launcher: ^6.1.7
   google_fonts: ^4.0.1
+  dyn_mouse_scroll: ^1.0.7
 
 dev_dependencies:
   flutter_test:
