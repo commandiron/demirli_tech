@@ -8,8 +8,8 @@ class AppStrings {
   static String? contactFooter;
 
   static void init() {
-    homeTitle = "İnşaat sektöründe mobil tabanlı teknoloji çözümleri sunuyoruz.";
-    homeSubTitle = "Uçtan uca tüm inşaat sektörünün inovasyonu ve yapay zeka uygulamaları için gelin beraber çalışalım.";
+    homeTitle = "İnşaat sektörü için yeni nesil mobil uygulamalar ve teknoloji çözümleri sunuyoruz.";
+    homeSubTitle = "Uçtan uca tüm inşaat sektörünün inovasyonu ve yapay zeka uygulamaları için bize ulaşın.";
     visionCategories = [
       "Fizibilite",
       "Tasarım",
